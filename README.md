@@ -2,6 +2,15 @@
 
 SMASaveSystem is a simple wrapper for saving data on Mac OS X and iOS.
 
+# Disclaimer
+
+We are still in the process of cleaning up this project and making it a bit easier to use and import. I'll add a quick list of things that are still in the works, so please bear with us.
+
+1. Create Cocoapod
+2. Currently dependent on CryptoSwift Cocoapod
+3. Create a better way to set the options for encryption, logging, encryption key, iv, etc.
+4. Finish updating README
+
 ##Basics
 SMASaveSystem consists only of class methods, import the class and go.
 ```swift 
