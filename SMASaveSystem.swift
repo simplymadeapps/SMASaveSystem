@@ -1,6 +1,5 @@
 //
 //  SMASaveSystem.swift
-//  simpleinout-mac
 //
 //  Created by Bill Burgess on 1/11/16.
 //  Copyright © 2016 Simply Made Apps. All rights reserved.
