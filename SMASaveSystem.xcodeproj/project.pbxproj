@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35980319180203081B75846E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB05E6C0344FEBA340607632 /* Pods.framework */; };
 		BA4DA19A1C4539D4005DEA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DA1991C4539D4005DEA69 /* AppDelegate.swift */; };
 		BA4DA19C1C4539D4005DEA69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DA19B1C4539D4005DEA69 /* ViewController.swift */; };
 		BA4DA19F1C4539D4005DEA69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4DA19D1C4539D4005DEA69 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		449F4D5C4F48FF1F4D9D0CA9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AB05E6C0344FEBA340607632 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4DA1961C4539D4005DEA69 /* SMASaveSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMASaveSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4DA1991C4539D4005DEA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA4DA19B1C4539D4005DEA69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		BA4DA1AA1C4539D4005DEA69 /* SMASaveSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMASaveSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4DA1AE1C4539D4005DEA69 /* SMASaveSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMASaveSystemTests.swift; sourceTree = "<group>"; };
 		BA4DA1B01C4539D4005DEA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8968C7251F125A71F83598F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35980319180203081B75846E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BEB3AED932AD9880CEE372C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				449F4D5C4F48FF1F4D9D0CA9 /* Pods.debug.xcconfig */,
+				D8968C7251F125A71F83598F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BA4DA18D1C4539D4005DEA69 = {
 			isa = PBXGroup;
 			children = (
 				BA4DA1981C4539D4005DEA69 /* SMASaveSystem */,
 				BA4DA1AD1C4539D4005DEA69 /* SMASaveSystemTests */,
 				BA4DA1971C4539D4005DEA69 /* Products */,
+				2BEB3AED932AD9880CEE372C /* Pods */,
+				E901C97E9F5A2677EE8A43ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +112,14 @@
 			path = SMASaveSystemTests;
 			sourceTree = "<group>";
 		};
+		E901C97E9F5A2677EE8A43ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB05E6C0344FEBA340607632 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA4DA1B31C4539D4005DEA69 /* Build configuration list for PBXNativeTarget "SMASaveSystem" */;
 			buildPhases = (
+				D336052C39D4B81BD2F2E45B /* Check Pods Manifest.lock */,
 				BA4DA1921C4539D4005DEA69 /* Sources */,
 				BA4DA1931C4539D4005DEA69 /* Frameworks */,
 				BA4DA1941C4539D4005DEA69 /* Resources */,
+				2085736C680746EE3C3A4804 /* Embed Pods Frameworks */,
+				FB36FBF0693289CCDB46274E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +218,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2085736C680746EE3C3A4804 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D336052C39D4B81BD2F2E45B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB36FBF0693289CCDB46274E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA4DA1921C4539D4005DEA69 /* Sources */ = {
@@ -325,6 +400,7 @@
 		};
 		BA4DA1B41C4539D4005DEA69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 449F4D5C4F48FF1F4D9D0CA9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SMASaveSystem/Info.plist;
@@ -336,6 +412,7 @@
 		};
 		BA4DA1B51C4539D4005DEA69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8968C7251F125A71F83598F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SMASaveSystem/Info.plist;
@@ -388,6 +465,7 @@
 				BA4DA1B51C4539D4005DEA69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA4DA1B61C4539D4005DEA69 /* Build configuration list for PBXNativeTarget "SMASaveSystemTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +474,7 @@
 				BA4DA1B81C4539D4005DEA69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
