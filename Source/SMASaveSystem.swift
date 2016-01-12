@@ -23,15 +23,15 @@ let SMASaveSystemOSNone = SMASaveSystemOS(0)
 let SMASaveSystemOSMacOSX = SMASaveSystemOS(1)
 let SMASaveSystemOSIOS = SMASaveSystemOS(2)
 
-class SMASaveSystem: NSObject {
+public class SMASaveSystem: NSObject {
     
     // MARK: Helper
-    class func appName() -> String? {
+    internal class func appName() -> String? {
         let bundlePath = NSBundle.mainBundle().bundleURL.lastPathComponent
         return (bundlePath as NSString!).lastPathComponent.lowercaseString
     }
     
-    class func os() -> SMASaveSystemOS {
+    internal class func os() -> SMASaveSystemOS {
         #if TARGET_OS_IPHONE || TARGET_OS_SIMULATOR
         return SMASaveSystemOSIOS
         #else
@@ -39,7 +39,7 @@ class SMASaveSystem: NSObject {
         #endif
     }
     
-    class func filePathEncryption(encryption: Bool) -> String? {
+    internal class func filePathEncryption(encryption: Bool) -> String? {
         let os = self.os()
         
         let fileExt = encryption ? ".abssen" : ".abss"
@@ -66,7 +66,7 @@ class SMASaveSystem: NSObject {
         return nil
     }
     
-    class func loadDictionaryEncryption(encryption: Bool) -> NSMutableDictionary? {
+    internal class func loadDictionaryEncryption(encryption: Bool) -> NSMutableDictionary? {
         let binaryFile = NSData(contentsOfFile: self.filePathEncryption(encryption)!)
         
         if binaryFile == nil {
@@ -88,7 +88,7 @@ class SMASaveSystem: NSObject {
     // MARK: Objects
     
     // MARK: NSData
-    internal class func saveData(data: NSData?, key: String!, encryption: Bool) {
+    public class func saveData(data: NSData?, key: String!, encryption: Bool) {
         let fileExists = NSFileManager.defaultManager().fileExistsAtPath(self.filePathEncryption(encryption)!)
         var tempDic: NSMutableDictionary?
         if fileExists == true {
@@ -109,11 +109,11 @@ class SMASaveSystem: NSObject {
         }
     }
     
-    internal class func saveData(data: NSData?, key: String!) {
+    public class func saveData(data: NSData?, key: String!) {
         self.saveData(data, key: key, encryption: SMASaveSystemConstants.Encryption)
     }
     
-    internal class func removeData(key: String!, encryption: Bool) {
+    public class func removeData(key: String!, encryption: Bool) {
         let fileExists = NSFileManager.defaultManager().fileExistsAtPath(self.filePathEncryption(encryption)!)
         let tempDic: NSMutableDictionary?
         if fileExists == true {
@@ -141,11 +141,11 @@ class SMASaveSystem: NSObject {
         }
     }
     
-    internal class func removeData(key: String!) {
+    public class func removeData(key: String!) {
         self.removeData(key, encryption: SMASaveSystemConstants.Encryption)
     }
     
-    internal class func data(key: String!, encryption: Bool) -> NSData? {
+    public class func data(key: String!, encryption: Bool) -> NSData? {
         let tempDic = self.loadDictionaryEncryption(encryption)
         if let data = tempDic?.objectForKey(key) {
             return data as? NSData
@@ -157,17 +157,17 @@ class SMASaveSystem: NSObject {
         }
     }
     
-    internal class func data(key: String!) -> NSData? {
+    public class func data(key: String!) -> NSData? {
         return self.data(key, encryption: SMASaveSystemConstants.Encryption)
     }
     
     // MARK: NSObject
-    internal class func saveObject(object: AnyObject, key: String!) {
+    public class func saveObject(object: AnyObject, key: String!) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(object)
         self.saveData(data, key: key)
     }
     
-    internal class func object(key: String!) -> AnyObject? {
+    public class func object(key: String!) -> AnyObject? {
         //return self.object(key)
         if let data = self.data(key) {
             if let object = NSKeyedUnarchiver.unarchiveObjectWithData(data) {
@@ -182,67 +182,67 @@ class SMASaveSystem: NSObject {
     }
     
     // MARK: String
-    internal class func saveString(string: String!, key: String!) {
+    public class func saveString(string: String!, key: String!) {
         self.saveObject(string, key: key)
     }
     
-    internal class func string(key: String!) -> String? {
+    public class func string(key: String!) -> String? {
         return self.object(key) as? String
     }
     
     // MARK: NSNumber
-    internal class func saveNumber(number: NSNumber!, key: String!) {
+    public class func saveNumber(number: NSNumber!, key: String!) {
         self.saveObject(number, key: key)
     }
     
-    internal class func number(key: String!) -> NSNumber? {
+    public class func number(key: String!) -> NSNumber? {
         return self.object(key) as? NSNumber
     }
     
     // MARK: NSDate
-    internal class func saveDate(date: NSDate!, key: String!) {
+    public class func saveDate(date: NSDate!, key: String!) {
         self.saveObject(date, key: key)
     }
     
-    internal class func date(key: String!) -> NSDate? {
+    public class func date(key: String!) -> NSDate? {
         return self.object(key) as? NSDate
     }
     
     // MARK: Primitives
     
     // MARK: NSInteger
-    internal class func saveInteger(integer: NSInteger!, key: String!) {
+    public class func saveInteger(integer: NSInteger!, key: String!) {
         self.saveObject(NSNumber(integer: integer), key: key)
     }
     
-    internal class func integer(key: String!) -> NSInteger? {
+    public class func integer(key: String!) -> NSInteger? {
         return self.object(key) as? NSInteger
     }
     
     // MARK: CGFloat
-    internal class func saveFloat(float: Float!, key: String!) {
+    public class func saveFloat(float: Float!, key: String!) {
         self.saveObject(NSNumber(float: float), key: key)
     }
     
-    internal class func float(key: String!) -> Float? {
+    public class func float(key: String!) -> Float? {
         return self.object(key) as? Float
     }
     
     // MARK: Bool
-    internal class func saveBool(bool: Bool, key: String!) {
+    public class func saveBool(bool: Bool, key: String!) {
         self.saveObject(NSNumber(bool: bool), key: key)
     }
     
-    internal class func bool(key: String!) -> Bool {
+    public class func bool(key: String!) -> Bool {
         return self.object(key) as! Bool
     }
     
     // MARK: Logging
-    class func logSavedValues() {
+    public class func logSavedValues() {
         self.logSavedValues(SMASaveSystemConstants.Encryption)
     }
     
-    class func logSavedValues(encryption: Bool) {
+    public class func logSavedValues(encryption: Bool) {
         let baseLogMessage = encryption ? "SMASaveSystem: logSavedValues (Encrypted)" : "SMASaveSystem: logSavedValues"
         
         if let tempDic = self.loadDictionaryEncryption(encryption) {
@@ -262,7 +262,7 @@ class SMASaveSystem: NSObject {
     }
     
     // MARK: Cleanup
-    internal class func truncate() {
+    public class func truncate() {
         let fileManager = NSFileManager.defaultManager()
         do {
             try fileManager.removeItemAtPath(self.filePathEncryption(SMASaveSystemConstants.Encryption)!)
