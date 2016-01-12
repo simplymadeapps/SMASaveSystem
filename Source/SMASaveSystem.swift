@@ -5,7 +5,6 @@
 //  Copyright © 2016 Simply Made Apps. All rights reserved.
 //
 
-import Cocoa
 import Foundation
 import CryptoSwift
 
