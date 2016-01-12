@@ -14,6 +14,7 @@
 		BA4DA1A11C4539D4005DEA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4DA1A01C4539D4005DEA69 /* Assets.xcassets */; };
 		BA4DA1A41C4539D4005DEA69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4DA1A21C4539D4005DEA69 /* LaunchScreen.storyboard */; };
 		BA4DA1AF1C4539D4005DEA69 /* SMASaveSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DA1AE1C4539D4005DEA69 /* SMASaveSystemTests.swift */; };
+		BA4DA1BA1C453BD6005DEA69 /* SMASaveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DA1B91C453BD6005DEA69 /* SMASaveSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		BA4DA1AA1C4539D4005DEA69 /* SMASaveSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMASaveSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4DA1AE1C4539D4005DEA69 /* SMASaveSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMASaveSystemTests.swift; sourceTree = "<group>"; };
 		BA4DA1B01C4539D4005DEA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA4DA1B91C453BD6005DEA69 /* SMASaveSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMASaveSystem.swift; sourceTree = "<group>"; };
 		D8968C7251F125A71F83598F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 			children = (
 				BA4DA1991C4539D4005DEA69 /* AppDelegate.swift */,
 				BA4DA19B1C4539D4005DEA69 /* ViewController.swift */,
+				BA4DA1B91C453BD6005DEA69 /* SMASaveSystem.swift */,
 				BA4DA19D1C4539D4005DEA69 /* Main.storyboard */,
 				BA4DA1A01C4539D4005DEA69 /* Assets.xcassets */,
 				BA4DA1A21C4539D4005DEA69 /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4DA1BA1C453BD6005DEA69 /* SMASaveSystem.swift in Sources */,
 				BA4DA19C1C4539D4005DEA69 /* ViewController.swift in Sources */,
 				BA4DA19A1C4539D4005DEA69 /* AppDelegate.swift in Sources */,
 			);
