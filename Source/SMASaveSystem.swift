@@ -88,7 +88,7 @@ class SMASaveSystem: NSObject {
     // MARK: Objects
     
     // MARK: NSData
-    class func saveData(data: NSData?, key: String!, encryption: Bool) {
+    internal class func saveData(data: NSData?, key: String!, encryption: Bool) {
         let fileExists = NSFileManager.defaultManager().fileExistsAtPath(self.filePathEncryption(encryption)!)
         var tempDic: NSMutableDictionary?
         if fileExists == true {
@@ -109,11 +109,11 @@ class SMASaveSystem: NSObject {
         }
     }
     
-    class func saveData(data: NSData?, key: String!) {
+    internal class func saveData(data: NSData?, key: String!) {
         self.saveData(data, key: key, encryption: SMASaveSystemConstants.Encryption)
     }
     
-    class func removeData(key: String!, encryption: Bool) {
+    internal class func removeData(key: String!, encryption: Bool) {
         let fileExists = NSFileManager.defaultManager().fileExistsAtPath(self.filePathEncryption(encryption)!)
         let tempDic: NSMutableDictionary?
         if fileExists == true {
@@ -141,11 +141,11 @@ class SMASaveSystem: NSObject {
         }
     }
     
-    class func removeData(key: String!) {
+    internal class func removeData(key: String!) {
         self.removeData(key, encryption: SMASaveSystemConstants.Encryption)
     }
     
-    class func data(key: String!, encryption: Bool) -> NSData? {
+    internal class func data(key: String!, encryption: Bool) -> NSData? {
         let tempDic = self.loadDictionaryEncryption(encryption)
         if let data = tempDic?.objectForKey(key) {
             return data as? NSData
@@ -157,33 +157,17 @@ class SMASaveSystem: NSObject {
         }
     }
     
-    class func data(key: String!) -> NSData? {
+    internal class func data(key: String!) -> NSData? {
         return self.data(key, encryption: SMASaveSystemConstants.Encryption)
     }
     
     // MARK: NSObject
-    class func saveObject(object: AnyObject, key: String!) {
+    internal class func saveObject(object: AnyObject, key: String!) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(object)
         self.saveData(data, key: key)
     }
     
-    /*
-    class func object(key: String!, checkClass: AnyClass?) -> AnyObject? {
-        if let data = self.data(key) {
-            let object = NSKeyedUnarchiver.unarchiveObjectWithData(data)
-            if (checkClass == nil || object?.isKindOfClass(checkClass!) != nil) {
-                return object
-            } else {
-                if SMASaveSystemConstants.Logging == true {
-                    print("SMASaveSystem ERROR: object(key: \(key) -> saved object is \(object?.classDescription) not a \(checkClass)")
-                }
-            }
-        }
-        return nil
-    }
-    */
-    
-    class func object(key: String!) -> AnyObject? {
+    internal class func object(key: String!) -> AnyObject? {
         //return self.object(key)
         if let data = self.data(key) {
             if let object = NSKeyedUnarchiver.unarchiveObjectWithData(data) {
@@ -198,58 +182,58 @@ class SMASaveSystem: NSObject {
     }
     
     // MARK: String
-    class func saveString(string: String!, key: String!) {
+    internal class func saveString(string: String!, key: String!) {
         self.saveObject(string, key: key)
     }
     
-    class func string(key: String!) -> String? {
+    internal class func string(key: String!) -> String? {
         return self.object(key) as? String
     }
     
     // MARK: NSNumber
-    class func saveNumber(number: NSNumber!, key: String!) {
+    internal class func saveNumber(number: NSNumber!, key: String!) {
         self.saveObject(number, key: key)
     }
     
-    class func number(key: String!) -> NSNumber? {
+    internal class func number(key: String!) -> NSNumber? {
         return self.object(key) as? NSNumber
     }
     
     // MARK: NSDate
-    class func saveDate(date: NSDate!, key: String!) {
+    internal class func saveDate(date: NSDate!, key: String!) {
         self.saveObject(date, key: key)
     }
     
-    class func date(key: String!) -> NSDate? {
+    internal class func date(key: String!) -> NSDate? {
         return self.object(key) as? NSDate
     }
     
     // MARK: Primitives
     
     // MARK: NSInteger
-    class func saveInteger(integer: NSInteger!, key: String!) {
+    internal class func saveInteger(integer: NSInteger!, key: String!) {
         self.saveObject(NSNumber(integer: integer), key: key)
     }
     
-    class func integer(key: String!) -> NSInteger? {
+    internal class func integer(key: String!) -> NSInteger? {
         return self.object(key) as? NSInteger
     }
     
     // MARK: CGFloat
-    class func saveFloat(float: Float!, key: String!) {
+    internal class func saveFloat(float: Float!, key: String!) {
         self.saveObject(NSNumber(float: float), key: key)
     }
     
-    class func float(key: String!) -> Float? {
+    internal class func float(key: String!) -> Float? {
         return self.object(key) as? Float
     }
     
     // MARK: Bool
-    class func saveBool(bool: Bool, key: String!) {
+    internal class func saveBool(bool: Bool, key: String!) {
         self.saveObject(NSNumber(bool: bool), key: key)
     }
     
-    class func bool(key: String!) -> Bool {
+    internal class func bool(key: String!) -> Bool {
         return self.object(key) as! Bool
     }
     
@@ -278,7 +262,7 @@ class SMASaveSystem: NSObject {
     }
     
     // MARK: Cleanup
-    class func truncate() {
+    internal class func truncate() {
         let fileManager = NSFileManager.defaultManager()
         do {
             try fileManager.removeItemAtPath(self.filePathEncryption(SMASaveSystemConstants.Encryption)!)
