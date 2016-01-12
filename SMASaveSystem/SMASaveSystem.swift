@@ -167,22 +167,6 @@ class SMASaveSystem: NSObject {
         self.saveData(data, key: key)
     }
     
-    /*
-    class func object(key: String!, checkClass: AnyClass?) -> AnyObject? {
-        if let data = self.data(key) {
-            let object = NSKeyedUnarchiver.unarchiveObjectWithData(data)
-            if (checkClass == nil || object?.isKindOfClass(checkClass!) != nil) {
-                return object
-            } else {
-                if SMASaveSystemConstants.Logging == true {
-                    print("SMASaveSystem ERROR: object(key: \(key) -> saved object is \(object?.classDescription) not a \(checkClass)")
-                }
-            }
-        }
-        return nil
-    }
-    */
-    
     class func object(key: String!) -> AnyObject? {
         //return self.object(key)
         if let data = self.data(key) {
