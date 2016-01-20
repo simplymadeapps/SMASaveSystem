@@ -54,7 +54,7 @@ class SMASaveSystemTests: XCTestCase {
         
         let value = "testvalue"
         let key = "key"
-        SMASaveSystem.saveString(value, key: key, encryption: true)
+        SMASaveSystem.saveString(value, key: key)
         
         let dict2 = SMASaveSystem.loadDictionaryEncryption(true)
         XCTAssertNotNil(dict2, "Dictionary should not be nil")
@@ -66,7 +66,7 @@ class SMASaveSystemTests: XCTestCase {
         
         let value = "testvalue"
         let key = "key"
-        SMASaveSystem.saveString(value, key: key, encryption: false)
+        SMASaveSystem.saveString(value, key: key)
         
         let dict2 = SMASaveSystem.loadDictionaryEncryption(false)
         XCTAssertNotNil(dict2, "Dictionary should not be nil")
