@@ -233,8 +233,8 @@ public class SMASaveSystem: NSObject {
         self.saveObject(NSNumber(bool: bool), key: key)
     }
     
-    public class func bool(key: String!) -> Bool {
-        return self.object(key) as! Bool
+    public class func bool(key: String!) -> Bool? {
+        return self.object(key) as? Bool
     }
     
     // MARK: Logging
