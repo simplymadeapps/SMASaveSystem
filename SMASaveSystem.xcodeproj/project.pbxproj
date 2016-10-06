@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3D0B90F161E82FBA5F9666 /* Pods_SMASaveSystemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FB9550BF1C9EDCEDEC4AD9 /* Pods_SMASaveSystemTests.framework */; };
 		6135BC0243DC223B483E3359 /* Pods_SMASaveSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED817984FCB162944FFED6A /* Pods_SMASaveSystem.framework */; };
 		BA4DA19A1C4539D4005DEA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DA1991C4539D4005DEA69 /* AppDelegate.swift */; };
 		BA4DA19C1C4539D4005DEA69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DA19B1C4539D4005DEA69 /* ViewController.swift */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		2ED817984FCB162944FFED6A /* Pods_SMASaveSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMASaveSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61FB9550BF1C9EDCEDEC4AD9 /* Pods_SMASaveSystemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMASaveSystemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		831DC07BC1E44DB89C451A4F /* Pods-SMASaveSystemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMASaveSystemTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SMASaveSystemTests/Pods-SMASaveSystemTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8B6BA930B4C631809101B5F /* Pods-SMASaveSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMASaveSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SMASaveSystem/Pods-SMASaveSystem.debug.xcconfig"; sourceTree = "<group>"; };
 		AB05E6C0344FEBA340607632 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4DA1961C4539D4005DEA69 /* SMASaveSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMASaveSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +45,7 @@
 		BA4DA1B91C453BD6005DEA69 /* SMASaveSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMASaveSystem.swift; path = ../Source/SMASaveSystem.swift; sourceTree = "<group>"; };
 		BA4DA1BB1C454166005DEA69 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA4DA1BD1C454170005DEA69 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BD1B3E026BB406D611AAD0A7 /* Pods-SMASaveSystemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMASaveSystemTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SMASaveSystemTests/Pods-SMASaveSystemTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7A60253F14EBAC1D79C7FB /* Pods-SMASaveSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMASaveSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-SMASaveSystem/Pods-SMASaveSystem.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3D0B90F161E82FBA5F9666 /* Pods_SMASaveSystemTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,8 @@
 			children = (
 				A8B6BA930B4C631809101B5F /* Pods-SMASaveSystem.debug.xcconfig */,
 				DD7A60253F14EBAC1D79C7FB /* Pods-SMASaveSystem.release.xcconfig */,
+				831DC07BC1E44DB89C451A4F /* Pods-SMASaveSystemTests.debug.xcconfig */,
+				BD1B3E026BB406D611AAD0A7 /* Pods-SMASaveSystemTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 			children = (
 				AB05E6C0344FEBA340607632 /* Pods.framework */,
 				2ED817984FCB162944FFED6A /* Pods_SMASaveSystem.framework */,
+				61FB9550BF1C9EDCEDEC4AD9 /* Pods_SMASaveSystemTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA4DA1B61C4539D4005DEA69 /* Build configuration list for PBXNativeTarget "SMASaveSystemTests" */;
 			buildPhases = (
+				43D0B34398B7518487AA56E5 /* [CP] Check Pods Manifest.lock */,
 				BA4DA1A61C4539D4005DEA69 /* Sources */,
 				BA4DA1A71C4539D4005DEA69 /* Frameworks */,
 				BA4DA1A81C4539D4005DEA69 /* Resources */,
+				9CC57313D47B9CEDE9B88054 /* [CP] Embed Pods Frameworks */,
+				15B423191D555C1F0F1FE5BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,7 +239,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		15B423191D555C1F0F1FE5BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SMASaveSystemTests/Pods-SMASaveSystemTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3076C8EC312B6E5054E91568 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		43D0B34398B7518487AA56E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,6 +297,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SMASaveSystem/Pods-SMASaveSystem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CC57313D47B9CEDE9B88054 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SMASaveSystemTests/Pods-SMASaveSystemTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A59EDFC1E86BCBCB296ECD92 /* [CP] Copy Pods Resources */ = {
@@ -427,6 +483,7 @@
 		};
 		BA4DA1B71C4539D4005DEA69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 831DC07BC1E44DB89C451A4F /* Pods-SMASaveSystemTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -441,6 +498,7 @@
 		};
 		BA4DA1B81C4539D4005DEA69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD1B3E026BB406D611AAD0A7 /* Pods-SMASaveSystemTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
