@@ -1,6 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-#platform :osx, :deployment_target => 10.11
+platform :ios, :deployment_target => 8.0
+
 use_frameworks!
 
-pod 'CryptoSwift'
+target 'SMASaveSystem' do
+   pod 'CryptoSwift', :git => "https://github.com/krzyzanowskim/CryptoSwift", :branch => "swift2"
+end

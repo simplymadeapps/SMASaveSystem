@@ -2,15 +2,9 @@
 //  Cipher.swift
 //  CryptoSwift
 //
-//  Created by Marcin Krzyzanowski on 30/08/14.
-//  Copyright (c) 2014 Marcin Krzyzanowski. All rights reserved.
+//  Created by Marcin Krzyzanowski on 29/05/16.
+//  Copyright © 2016 Marcin Krzyzanowski. All rights reserved.
 //
-
-#if os(Linux)
-    import Glibc
-#else
-    import Darwin
-#endif
 
 public enum CipherError: ErrorType {
     case Encrypt
@@ -18,18 +12,15 @@ public enum CipherError: ErrorType {
 }
 
 public protocol Cipher {
-    func cipherEncrypt(bytes: [UInt8]) throws -> [UInt8]
-    func cipherDecrypt(bytes: [UInt8]) throws -> [UInt8]
-    
-    static func randomIV(blockSize:Int) -> [UInt8]
-}
+    /// Encrypt given bytes at once
+    ///
+    /// - parameter bytes: Plaintext data
+    /// - returns: Encrypted data
+    func encrypt(bytes: Array<UInt8>) throws -> Array<UInt8>
 
-extension Cipher {
-    static public func randomIV(blockSize:Int) -> [UInt8] {
-        var randomIV:[UInt8] = [UInt8]();
-        for _ in 0..<blockSize {
-            randomIV.append(UInt8(truncatingBitPattern: cs_arc4random_uniform(256)));
-        }
-        return randomIV
-    }
+    /// Decrypt given bytes at once
+    ///
+    /// - parameter bytes: Ciphertext data
+    /// - returns: Plaintext data
+    func decrypt(bytes: Array<UInt8>) throws -> Array<UInt8>
 }

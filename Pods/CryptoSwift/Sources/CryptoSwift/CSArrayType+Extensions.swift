@@ -17,11 +17,12 @@ extension Array: CSArrayType {
 }
 
 public extension CSArrayType where Generator.Element == UInt8 {
-    
     public func toHexString() -> String {
         return self.lazy.reduce("") { $0 + String(format:"%02x", $1) }
     }
-    
+}
+
+public extension CSArrayType where Generator.Element == UInt8 {
     public func md5() -> [Generator.Element] {
         return Hash.md5(cs_arrayValue()).calculate()
     }
@@ -46,8 +47,8 @@ public extension CSArrayType where Generator.Element == UInt8 {
         return Hash.sha512(cs_arrayValue()).calculate()
     }
     
-    public func crc32(seed: UInt32? = nil) -> [Generator.Element] {
-        return Hash.crc32(cs_arrayValue(), seed: seed).calculate()
+    public func crc32(seed: UInt32? = nil, reflect : Bool = true) -> [Generator.Element] {
+        return Hash.crc32(cs_arrayValue(), seed: seed, reflect: reflect).calculate()
     }
     
     public func crc16(seed: UInt16? = nil) -> [Generator.Element] {
@@ -55,11 +56,11 @@ public extension CSArrayType where Generator.Element == UInt8 {
     }
     
     public func encrypt(cipher: Cipher) throws -> [Generator.Element] {
-        return try cipher.cipherEncrypt(cs_arrayValue())
+        return try cipher.encrypt(cs_arrayValue())
     }
 
     public func decrypt(cipher: Cipher) throws -> [Generator.Element] {
-        return try cipher.cipherDecrypt(cs_arrayValue())
+        return try cipher.decrypt(cs_arrayValue())
     }
     
     public func authenticate(authenticator: Authenticator) throws -> [Generator.Element] {
