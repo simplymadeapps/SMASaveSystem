@@ -33,9 +33,11 @@ public class SMASaveSystem: NSObject {
     
     internal class func os() -> SMASaveSystemOS {
         #if TARGET_OS_IPHONE || TARGET_OS_SIMULATOR
-        return SMASaveSystemOSIOS
+            return SMASaveSystemOSIOS
+        #elseif TARGET_OS_MAC || TARGET_OS_OSX
+            return SMASaveSystemOSMacOSX
         #else
-        return SMASaveSystemOSMacOSX
+            return SMASaveSystemOSIOS
         #endif
     }
     
